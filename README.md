@@ -7,12 +7,16 @@ Go Router
 
 # Usage
 
+## Importing
+
+    import "github.com/c0rrzin/router"
+
 ## Defining routes
 
-    DefRoute("POST", "/", func(w http.ResponseWriter, r *http.Request) {
+    router.DefRoute("POST", "/", func(w http.ResponseWriter, r *http.Request) {
       fmt.Fprintf(w, "Hello POST")
     })
-    DefRoute("GET", "/", func(w http.ResponseWriter, r *http.Request) {
+    router.DefRoute("GET", "/", func(w http.ResponseWriter, r *http.Request) {
       fmt.Fprintf(w, "Hello GET")
     })
 
@@ -22,7 +26,7 @@ Before you instantiate the server:
     func main() {
       ...
 
-      RouteAll()
+      router.RouteAll()
 
       ...
     }
